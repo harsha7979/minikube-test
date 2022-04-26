@@ -1,1 +1,1 @@
-# jenkins-kubernetes-example
+# jenkins-kubernetes-demo

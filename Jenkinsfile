@@ -10,13 +10,13 @@ pipeline{
         stage('Deploy Docker Image') {
             steps {
                 sh "echo staring deploy the image"
-                sh 'docker login -u $harshapatel -p $docker@12420'
+                sh 'docker login -u $DOCKER_ID -p $DOCKER_PASSWORD'
                 sh 'docker push harshapatel/nodejsapp-1.0:latest'
             }
         }
         stage('Remove Docker Image') {
             steps {
-                sh "docker rmi -f viraj5132/nodejsapp-1.0"    
+                sh "docker rmi -f harshapatel/nodejsapp-1.0"    
             }
         }
         stage('Deploy to Kubernetes') {
